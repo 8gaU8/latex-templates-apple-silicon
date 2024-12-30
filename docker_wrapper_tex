@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# デフォルトのプラットフォーム
+DEFAULT_PLATFORM="linux/amd64"
+
+# 引数が空の場合、エラーを表示
+if [ "$#" -lt 1 ]; then
+    echo "Usage: docker_wrapper <docker_command> [additional arguments]"
+    exit 1
+fi
+
+# コマンド（例: run, pull, etc.）
+DOCKER_COMMAND="$1"
+shift # 最初の引数を削除して残りを取得
+
+# 特定のサブコマンドに対してオプションを追加
+case "$DOCKER_COMMAND" in
+    run)
+        # docker run に対して --platform を追加
+        docker "$DOCKER_COMMAND" --platform="$DEFAULT_PLATFORM" "$@"
+        ;;
+    *)
+        # その他のサブコマンドはそのまま実行
+        docker "$DOCKER_COMMAND" "$@"
+        ;;
+esac

@@ -1,0 +1,118 @@
+\subsection{Figures}
+
+Single figure:
+\begin{figure}[H] %
+  \centering
+  \includegraphics[width=0.5\textwidth]{images/UEF_logo.png}
+  \caption[]{Caption}
+  \label{fig:label}
+\end{figure}
+
+Subfigures:
+\begin{figure}[H] %
+  \centering
+  \subfloat[SubcaptionA]{\includegraphics[width=0.45\textwidth]{images/UEF_logo.png}}
+  \hspace{0.1cm}
+  \subfloat[SubcaptioB]{\includegraphics[width=0.45\textwidth]{images/UEF_logo.png}}
+  \caption[]{Caption}
+  \label{fig:label}
+\end{figure}
+
+\subsection{Tables}
+You can use this link for tables: \url{https://www.tablesgenerator.com/}
+
+Table:
+\begin{table}[H]
+  \centering
+  %\resizebox{\textwidth}{!} %%%% Activate if it's a long table
+  {
+    \begin{tabular}{|l|c|r|}
+      \hline
+      \textbf{Left} & \textbf{Center} & \textbf{Right} \\ \hline \hline
+      1 & 2 & 3 \\ \hline
+      4 & 5 & 6 \\ \hline
+      7 & 8 & 9 \\ \hline
+
+  \end{tabular}}
+  \caption{Caption}
+  \label{tab:label}
+\end{table}
+
+Long table:
+\begin{table}[H]
+  \centering
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{|r|r|r|r|r|r|}
+      \hline
+      \textbf{TitleVeryVeryLong1} & \textbf{Title2} &
+      \textbf{TitleVeryVeryLong3} & \textbf{Title4} &
+      \textbf{TitleVeryVeryLong5} & \textbf{Title6} \\ \hline \hline
+      1 &2& 3 & 4 & 5  & 6 \\ \hline
+      1 &2& 3 & 4 & 5  & 6 \\ \hline
+
+  \end{tabular}}
+  \caption{Caption}
+  \label{tab:label}
+\end{table}
+
+\clearpage
+\subsection{Pseudocode}
+
+Example of simple algorithm:
+\begin{algorithm}[H]
+  \caption{AlgorithmDescription}
+  \label{alg:label}
+  \textbf{Input:} Define the input\\
+  \textbf{Output:} Define the output
+
+  \begin{algorithmic}[1]
+    \STATE Do an operation
+    \STATE Do another operation
+    \STATE Wait some miliseconds
+    \IF{Condition}
+    \STATE Do corresponding action
+    \ENDIF
+    \STATE Do something else
+    \STATE \textbf{return} $-1$
+  \end{algorithmic}
+\end{algorithm}
+
+Example of algorithm with functions predefined:
+
+\begin{algorithm}[H]
+  \caption{AlgorithmDescription}
+  \label{alg:label}
+  \textbf{Input:} Graf $G = (V, E)$ no dirigit i connex, Vector
+  d'enters \emph{NND}\\
+  \textbf{Output:} \emph{-1} si NND és un conjunt dominador, $i \in
+  [0, N)$ altrament
+  \begin{algorithmic}[1]
+    %For
+    \FOR{each $i \in [0, N)$}
+    \STATE Do something
+    \ENDFOR
+
+    \STATE Explain somehting like "Generakte k+1 neighbors"
+
+    \IF{$NND[i] < \left\lceil
+    \displaystyle\frac{G.get\_nb\_veins(i)}{2} \right\rceil$}
+    \STATE \textbf{return} $i$
+    \ENDIF
+
+    \WHILE{D is not a PIDS}
+    \STATE $v* \leftarrow arg max_{\forall v \not\in S } \{funcioGreedy(v)\}$
+    \STATE $D \leftarrow  D  \cup  \{v*\}$
+    \STATE $updateData(v)$
+    \ENDWHILE
+    \STATE \textbf{return} $-1$
+  \end{algorithmic}
+\end{algorithm}
+
+\subsection{Code fragments}
+\begin{lstlisting}[language=Python, caption={CaptionPythonCode}, label={code:label}]
+## Insert here the code as it
+## Change the language from the headder to adapt the colors
+
+def __main__():
+    print("Hello World!")
+\end{lstlisting}

@@ -1,0 +1,34 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage{config}
+
+
+
+\author{Name}
+\title{Name of cource and title}
+\date{\today}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Homework 1}
+\chead{\includegraphics[width=1.5cm]{images/UEF_logo.png}}
+\lhead{Name of cource}
+\rfoot{\thepage}
+
+
+%--------------------to clear---------------------------
+
+\begin{document}
+\fancypagestyle{plain}{} 
+\maketitle
+
+\section{Some snippets}
+\input{utils}
+\clearpage
+
+\input{essay}
+
+\bibliographystyle{plain} 
+\bibliography{references} 
+
+\end{document}

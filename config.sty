@@ -1,0 +1,158 @@
+%\documentclass[a4paper]{article}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+
+%%%%%%%%%%%%%%%%%%
+%%% Packages %%%%%
+%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath}
+        % Math
+\usepackage{amsfonts}
+        % Math characters
+\usepackage{float}
+        % Improved interface for floating objects
+%\usepackage{graphicx}
+%\usepackage[demo]{graphicx}
+        % Enhanced support for graphics
+\usepackage{hyperref}
+        % Create hyperlinks within the document
+\usepackage{subfig}
+        % Support for the manipulation and reference of small or ‘sub’ figures and tables within a single figure or table environment
+
+\usepackage{pgfplots}
+        % Visualization tool and ideal for creating scientific/technical graphics
+\usepackage{algorithm}
+\usepackage{algorithmic}
+        % Provides a algorithmic environment and some useful commands
+\usepackage[english]{babel}
+        % Manages culturally-determined typographical (and other) rules for a wide range of languages
+\usepackage{fancyhdr}
+        % Extensive control of page headers and footers
+%\usepackage{pdfpages}
+        % Include PDF documents in LATEX
+\usepackage{pdflscape}
+        % Make landscape pages display as landscape
+\usepackage{lscape}
+        % Place selected parts of a document in landscape
+%\usepackage{biblatex}
+
+\usepackage{listings}
+        % Enables the user to typeset programs (programming code)
+\usepackage{xcolor}
+%\usepackage[dvipsnames]{xcolor} %loads 68 named colours (CMYK)
+%\usepackage[svgnames]{xcolor} %loads 151 named colours (RGB)
+%\usepackage[x11names]{xcolor} %loads 317 named colours (RGB)
+        % Allows LaTeX users to paint the font or the background of their documents
+\usepackage{todonotes}
+        % Add TODOs on the document
+\usepackage{comment}
+        % Selectively include/exclude portions of text
+
+
+
+%%%%%%%%%%%%%%%%%%
+%% Customization %
+%%%%%%%%%%%%%%%%%%
+
+\graphicspath{ {./images/} }
+        % Path of images
+
+\usepackage{multicol}       
+        %Enables multiple columns
+\setlength{\columnsep}{1cm}
+
+\usepackage{parskip}
+% Paragraph spacing
+\setlength{\parindent}{10pt}
+
+\linespread{1.1}
+        % Change the line spread
+        
+%%%%%%% Define style for code
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\definecolor{groovyblue}{HTML}{0000A0}
+\definecolor{groovygreen}{HTML}{008000}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+ 
+\lstdefinelanguage{Groovy}[]{Java}{
+  keywordstyle=\color{groovyblue}\bfseries,
+  stringstyle=\color{groovygreen}\ttfamily,
+  keywords=[3]{each, findAll, groupBy, collect, inject, eachWithIndex},
+  morekeywords={def, as, in, use},
+  moredelim=[is][\textcolor{darkgray}]{\%\%}{\%\%},
+  moredelim=[il][\textcolor{darkgray}]{§§}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%INI creacio subsubsubtitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+
+\titleclass{\subsubsubsection}{straight}[\subsection]
+
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%FIN creacio subsubsubtitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Rename of objects
+%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand*\contentsname{Continguts}
+%\renewcommand{\figurename}{Figura}
+\renewcommand{\lstlistingname}{Code}
